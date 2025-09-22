@@ -110,7 +110,14 @@ export function Skills() {
                     className="group"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium">{skill.name}</span>
+                      <div>
+                        <span className="font-medium">{skill.name}</span>
+                        {skill.frameworks && skill.frameworks.length > 0 && (
+                          <div className="text-xs text-muted-foreground mt-1">
+                            {skill.frameworks.join(" • ")}
+                          </div>
+                        )}
+                      </div>
                       <span className="text-sm text-muted-foreground">{skill.experience}</span>
                     </div>
                     <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
