@@ -37,10 +37,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: personalInfo.name }],
   creator: personalInfo.name,
+  metadataBase: new URL('https://rinta.id.au'),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://rinta.au",
+    url: "https://rinta.id.au",
     title: `${personalInfo.name} - ${personalInfo.title}`,
     description: personalInfo.bio,
     siteName: `${personalInfo.name} Portfolio`,
@@ -84,7 +85,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="canonical" href="https://rinta.au" />
+        <link rel="canonical" href="https://rinta.id.au" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -94,8 +95,8 @@ export default function RootLayout({
               name: personalInfo.name,
               jobTitle: personalInfo.title,
               description: personalInfo.bio,
-              url: "https://rinta.au",
-              image: "https://rinta.au/rinta-photo.jpg",
+              url: "https://rinta.id.au",
+              image: "https://rinta.id.au/rinta-photo.jpg",
               sameAs: [
                 personalInfo.github,
                 personalInfo.linkedin,
