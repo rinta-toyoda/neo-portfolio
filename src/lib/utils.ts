@@ -16,9 +16,28 @@ export const personalInfo = {
   languages: ["Japanese", "English", "Chinese"],
   bio: "Full-stack Engineer from Australia with 2+ years of experience in building scalable web applications and AI-powered solutions.",
   skills: {
-    backend: ["PHP", "Laravel", "Python", "FastAPI", "Kotlin", "Spring Boot", "PostgreSQL"],
-    frontend: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Framer Motion"],
-    tools: ["Docker", "AWS", "Git", "Linux"]
+    backend: [
+      { name: "PHP", experience: "2+ years", months: 24 },
+      { name: "Laravel", experience: "2+ years", months: 24 },
+      { name: "Python", experience: "1.5 years", months: 18 },
+      { name: "FastAPI", experience: "1 year", months: 12 },
+      { name: "Kotlin", experience: "1 year", months: 12 },
+      { name: "Spring Boot", experience: "8 months", months: 8 },
+      { name: "PostgreSQL", experience: "2+ years", months: 24 }
+    ],
+    frontend: [
+      { name: "TypeScript", experience: "2+ years", months: 24 },
+      { name: "React", experience: "2+ years", months: 24 },
+      { name: "Next.js", experience: "1.5 years", months: 18 },
+      { name: "Tailwind CSS", experience: "1.5 years", months: 18 },
+      { name: "Framer Motion", experience: "6 months", months: 6 }
+    ],
+    tools: [
+      { name: "Docker", experience: "2+ years", months: 24 },
+      { name: "AWS", experience: "1.5 years", months: 18 },
+      { name: "Git", experience: "2+ years", months: 24 },
+      { name: "Linux", experience: "2+ years", months: 24 }
+    ]
   },
   education: [
     {

@@ -5,6 +5,19 @@ import { personalInfo } from "@/lib/utils"
 import { FiServer, FiMonitor, FiTool } from "react-icons/fi"
 
 export function Skills() {
+  // Calculate maximum months for proportional scaling
+  const allSkills = [
+    ...personalInfo.skills.backend,
+    ...personalInfo.skills.frontend,
+    ...personalInfo.skills.tools
+  ]
+  const maxMonths = Math.max(...allSkills.map(skill => skill.months))
+
+  // Calculate proportional width for each skill
+  const getSkillWidth = (months: number) => {
+    return Math.max((months / maxMonths) * 100, 15) // Minimum 15% width for visibility
+  }
+
   const skillCategories = [
     {
       title: "Backend",
@@ -86,7 +99,7 @@ export function Skills() {
               <div className="space-y-3">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
-                    key={skill}
+                    key={skill.name}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -97,18 +110,19 @@ export function Skills() {
                     className="group"
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className="font-medium">{skill}</span>
+                      <span className="font-medium">{skill.name}</span>
+                      <span className="text-sm text-muted-foreground">{skill.experience}</span>
                     </div>
                     <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
                       <motion.div
                         className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
                         initial={{ width: 0 }}
-                        whileInView={{ width: "90%" }}
+                        whileInView={{ width: `${getSkillWidth(skill.months)}%` }}
                         viewport={{ once: true }}
                         transition={{
                           duration: 1,
                           delay: categoryIndex * 0.1 + skillIndex * 0.05 + 0.2,
-                          ease: "easeOut",
+                          ease: [0.25, 0.46, 0.45, 0.94],
                         }}
                       />
                     </div>
