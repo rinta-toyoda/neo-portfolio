@@ -145,63 +145,6 @@ export function Experience() {
                 </motion.div>
               ))}
             </div>
-
-            {/* Projects */}
-            <div className="mt-12">
-              <h3 className="text-2xl font-semibold mb-8">Featured Projects</h3>
-              <div className="space-y-6">
-                {personalInfo.projects.map((project, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="glass rounded-xl p-6 hover:shadow-xl transition-all duration-300"
-                    whileHover={{ y: -2 }}
-                  >
-                    <div className="flex items-start justify-between mb-3">
-                      <h4 className="text-lg font-semibold text-primary">{project.name}</h4>
-                      {(project.github || project.url) && (
-                        <div className="flex gap-2">
-                          {project.github && (
-                            <a
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-muted-foreground hover:text-primary transition-colors"
-                            >
-                              <FiExternalLink size={16} />
-                            </a>
-                          )}
-                          {project.url && (
-                            <a
-                              href={project.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-muted-foreground hover:text-primary transition-colors"
-                            >
-                              <FiExternalLink size={16} />
-                            </a>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                    <p className="text-muted-foreground mb-3">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-1 text-xs font-medium bg-secondary text-secondary-foreground rounded"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
           </motion.div>
         </div>
       </div>

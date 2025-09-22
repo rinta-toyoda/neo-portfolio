@@ -53,7 +53,13 @@ export const personalInfo = {
         name: "TypeScript",
         experience: "8 months",
         months: 8,
-        frameworks: ["React", "Tailwind CSS"]
+        frameworks: ["React"]
+      },
+      {
+        name: "CSS",
+        experience: "1.5 years",
+        months: 18,
+        frameworks: ["Tailwind CSS"]
       }
     ],
     tools: [

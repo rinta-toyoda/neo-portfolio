@@ -109,8 +109,8 @@ export function Skills() {
                     }}
                     className="group"
                   >
-                    <div className="flex items-center justify-between mb-2">
-                      <div>
+                    <div className="flex items-start justify-between mb-2 gap-3">
+                      <div className="flex-1 min-w-0">
                         <span className="font-medium">{skill.name}</span>
                         {skill.frameworks && skill.frameworks.length > 0 && (
                           <div className="text-xs text-muted-foreground mt-1">
@@ -118,7 +118,7 @@ export function Skills() {
                           </div>
                         )}
                       </div>
-                      <span className="text-sm text-muted-foreground">{skill.experience}</span>
+                      <span className="text-sm text-muted-foreground whitespace-nowrap flex-shrink-0">{skill.experience}</span>
                     </div>
                     <div className="w-full bg-secondary rounded-full h-2 overflow-hidden">
                       <motion.div
